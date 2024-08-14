@@ -1,0 +1,11 @@
+name: batesste-minio github workflow
+on: [pull_request]
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4.1.7
+      - uses: adambirds/docker-compose-action@v1.3.0
+        with:
+          compose-file: ./batesste-minio.yaml
